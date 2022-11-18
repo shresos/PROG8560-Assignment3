@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>Card</title>
+    <style>
+      main {
+        width: 900px;
+      }
+      table {
+        width: 98%;
+      }
+      table,
+      td,
+      th {
+        border: 1px solid rgb(162, 159, 159);
+      }
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 0.35rem;
+        text-align: left;
+        border: 1px solid rgb(87, 86, 86);
+        font-size: 20px;
+      }
+
+      /* td, th{
+          padding: 5px 10px;
+      } */
+      thead th,
+      tfoot th {
+        background-color: whitesmoke;
+        color: black;
+      }
+      thead th {
+        font-size: 20px;
+        height: 50px;
+      }
+      tbody tr:nth-child(even) td,
+      tbody tr:nth-child(even) th {
+        background-color: rgb(255, 250, 250);
+      }
+    </style>
+  </head>
+  <body class="card">
+    <%- include('partials/nav.ejs') %>
+    <main>
+      <h3>The below request was DELETED!</h3>
+      <section>
+        <div class="orderData">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= name %></td>
+                <td><%= email %></td>
+                <td><%- description %></td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <h2>Attachment</h2>
+          </div>
+          <div class="upload_image_section">
+            <img src="/uploads/<%= uploadImageName %>" alt="Photo" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>

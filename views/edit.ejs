@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    <main>
+      <h1>Edit Request</h1>
+
+      <div class="form_section">
+        <form action="/editprocess/<%= _id %>" method="POST" enctype="multipart/form-data">
+          <div class="wrapper">
+            <label for="name"> Name</label> <br />
+            <input type="text" id="name" name="name" value="<%= name %>" />
+          </div>
+
+          <div class="wrapper">
+            <label for="email"> Email</label><br />
+            <input type="text" id="email" name="email" value="<%= email %>" />
+          </div>
+
+          <div class="wrapper">
+            <label for="uploadImage">Attachment</label> <br />
+            <div class="form_section_filetype">
+              <input type="file" id="uploadImage" name="uploadImage" />
+            </div>
+          </div>
+          <br />
+          <div class="wrapper">
+            <label for="description"> Description</label><br /><br />
+            <input type="text" id="description" name="description" value="<%= description%>" />
+          </div>
+
+          <br />
+          <div class="wrapper submission form_submission">
+            <input type="submit" value="Submit Request" />
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <%- include('partials/footer.ejs') %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/tinymce/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+        selector: '#description',
+      });
+    </script>
+  </body>
+</html>

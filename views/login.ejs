@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>Login</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+    <main>
+      <div class="form_title">
+        <h3>Admin Login</h3>
+      </div>
+      <div class="login_section">
+        <form action="login" method="POST">
+          <div class="wrapper">
+            <label for="uname">Username</label>
+            <input type="text" id="uname" name="uname" />
+          </div>
+          <div class="wrapper">
+            <label for="upass">Password</label>
+            <input type="password" id="upass" name="upass" />
+          </div>
+          <br />
+          <div class="wrapper submission form_submission">
+            <input type="submit" value="Login!" />
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>
