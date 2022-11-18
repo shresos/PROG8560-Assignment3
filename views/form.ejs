@@ -22,7 +22,12 @@ error.msg; break; } } } %>
       <div class="form_section">
         <form action="process" method="POST" enctype="multipart/form-data">
           <div class="wrapper">
-            <label for="name"> Name</label> <br />
+            <label for="name"> First Name</label> <br />
+            <input type="text" id="name" name="name" value="<%= name %>" />
+            <p class="error"><%= nameError %></p>
+          </div>
+          <div class="wrapper">
+            <label for="name"> Last Name</label> <br />
             <input type="text" id="name" name="name" value="<%= name %>" />
             <p class="error"><%= nameError %></p>
           </div>
