@@ -74,10 +74,6 @@ myApp.get('/allcomplain', function (req, res) {
   }
 });
 
-myApp.get('/aboutus', function (req, res) {
-  res.render('aboutus');
-});
-
 // Define module logout
 myApp.get('/logout', function (req, res) {
   // destroy the whole session login session and reset
